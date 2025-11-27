@@ -1,9 +1,13 @@
-import './globals.css';
+// app/layout.tsx
 import type { Metadata } from 'next';
+import './globals.css';
+import CustomCursor from './components/CustomCursor';
+import PageLoader from './components/PageLoader';
+import AnimatedBackground from './components/AnimatedBackground';
 
 export const metadata: Metadata = {
-  title: 'Your Name - Portfolio',
-  description: 'Senior Full-Stack Developer',
+  title: 'Khushie Pal - Full Stack Developer',
+  description: 'Full Stack Developer specializing in modern web technologies',
 };
 
 export default function RootLayout({
@@ -13,7 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50 dark:bg-gray-900">{children}</body>
+      <body className="cursor-none">
+        <PageLoader />
+        <AnimatedBackground />
+        <CustomCursor />
+        {children}
+      </body>
     </html>
   );
 }

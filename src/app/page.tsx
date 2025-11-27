@@ -1,26 +1,42 @@
+// app/page.tsx
+import Header from './components/Header';
 import About from './components/About';
-import Experience from './components/Experience';
+import ExperienceSection from './components/ExperienceSection';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Education from './components/Education';
+import StaggerAnimation from './components/StaggerAnimation';
+import HoverGlow from './components/HoverGlow';
 
 export default function Home() {
   return (
-    <main className="min-h-screen max-w-7xl mx-auto px-4 py-8">
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        {/* Left Sidebar */}
-        <div className="lg:col-span-1 space-y-8">
-          <About />
-        </div>
+    <div className="min-h-screen bg-[#0a0f1a]">
+      <div className="max-w-8xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-12 p-16">
+        {/* Sidebar */}
+        <StaggerAnimation delay={200}>
+          <Header />
+        </StaggerAnimation>
         
         {/* Main Content */}
-        <div className="lg:col-span-3 space-y-12">
-          <Experience />
-          <Projects />
-          <Skills />
-          <Education />
+        <div className="lg:col-span-3">
+          
+          <StaggerAnimation delay={600}>
+              <ExperienceSection />
+          </StaggerAnimation>
+          
+          <StaggerAnimation delay={800}>
+              <Projects />
+          </StaggerAnimation>
+          
+          <StaggerAnimation delay={1000}>
+              <Education />
+          </StaggerAnimation>
+          
+          <StaggerAnimation delay={1200}>
+              <Skills />
+          </StaggerAnimation>
         </div>
       </div>
-    </main>
+    </div>
   );
 }

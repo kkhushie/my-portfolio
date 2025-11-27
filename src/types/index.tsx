@@ -16,13 +16,29 @@ export interface Experience {
     title: string;
     description: string;
     url: string;
-    github:string;
     features: string[];
     technologies: string[];
+    githubUrl?: string;
   }
   
   export interface Skill {
     name: string;
     level: 'Advanced' | 'Intermediate' | 'Beginner';
-    icon: string;
+    icon?: string;
+  }
+  
+  export interface Education {
+    id: string;
+    institution: string;
+    degree: string;
+    period: string;
+    url?: string;
+  }
+  
+  export interface Certificate {
+    id: string;
+    title: string;
+    issuer: string;
+    date: string;
+    url?: string;
   }
