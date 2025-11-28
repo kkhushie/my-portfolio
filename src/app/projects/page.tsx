@@ -1,4 +1,5 @@
 import { ExternalLink, Github, Calendar } from 'lucide-react';
+import StaggerAnimation from '../components/StaggerAnimation';
 
 const projectsData=[
     { id:1,
@@ -86,10 +87,12 @@ const projectsData=[
 // app/projects/page.tsx
 
 export default function Projects() {
+  let staggerDelayIncrement = 600; // milliseconds
   return (
     <div className="min-h-screen bg-[#0a0f1a]">
       <div className="max-w-6xl mx-auto p-8">
         {/* Header */}
+        <StaggerAnimation delay={200}>
         <section className="mb-16 text-center">
           <h1 className="text-5xl font-bold text-white mb-6">Projects</h1>
           <p className="text-xl text-[#4a9eff] mb-4">Showcase of my work</p>
@@ -98,11 +101,14 @@ export default function Projects() {
             performance, and clean code architecture.
           </p>
         </section>
-
+        </StaggerAnimation>
         {/* Projects Grid */}
         <section className="mb-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {projectsData.map((project) => (
+              staggerDelayIncrement += 200,
+                        <StaggerAnimation delay={staggerDelayIncrement}>
+
               <div key={project.id} className="bg-[#0f1824] border border-[#1a2332] rounded-2xl p-6 hover:border-[#2a3f5f] transition-all group hover:scale-105 duration-300">
                 {/* Project Header */}
                 <div className="flex items-start justify-between mb-4">
@@ -165,6 +171,7 @@ export default function Projects() {
                   )}
                 </div>
               </div>
+              </StaggerAnimation>
             ))}
           </div>
         </section>

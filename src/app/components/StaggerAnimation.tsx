@@ -9,7 +9,7 @@ interface StaggerAnimationProps {
   className?: string;
 }
 
-const StaggerAnimation = ({ children, delay = 8, className = '' }: StaggerAnimationProps) => {
+const StaggerAnimation = ({ children, delay = 2, className = '' }: StaggerAnimationProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

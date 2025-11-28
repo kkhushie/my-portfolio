@@ -30,9 +30,9 @@ const Header = () => {
     ];
 
     return (
-        <div className="sticky top-0">
+        <div className="sticky top-20">
             {/* Profile Card */}
-            <div className="bg-[#1a2332] rounded-3xl p-6 mb-6 rotate-2 hover:rotate-0 hover:bg-[#232e41] transition-transform cursor-pointer">
+            <div className="bg-[#1a2332] rounded-3xl p-6 py-4 mb-6 rotate-2 hover:rotate-0 hover:bg-[#232e41] transition-transform cursor-pointer">
                 <div className="flex items-center gap-4 mb-4">
                     {/* Profile Image Container */}
                     <div className="relative">
@@ -164,10 +164,24 @@ const Header = () => {
         </div> */}
 
             {/* Status */}
-            <div className="bg-[#1a2332] rounded-2xl p-4 flex items-center cursor-pointer hover:bg-[#222d42] transition">
-                <CheckCircle className="w-5 h-5 mr-3 text-green-500" />
-                <span className="text-gray-300 font-medium">Available for work</span>
-            </div>
+                <Link
+                    href="/contact"
+                    className="bg-[#1a2332] rounded-2xl p-4 flex items-center cursor-pointer hover:bg-[#222d42] transition"
+                >
+                    <CheckCircle className="w-5 h-5 mr-3 text-green-500" />
+                    <span className="text-gray-300 font-medium">Available for work</span>
+                </Link>
+            {/* // In Header.tsx - add this after the Status section */}
+            {/* <div className="mt-6">
+  <Link 
+    href="/contact" 
+    className="bg-gradient-to-r from-[#4a7aff] to-[#4a9eff] text-white rounded-2xl p-4 flex items-center justify-center gap-2 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] hover:scale-105 transition-all duration-300 group"
+  >
+    <Mail className="w-5 h-5" />
+    <span className="font-medium">Get In Touch</span>
+    <GoArrowUpRight className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+
+</div> */}
         </div>
     );
 };

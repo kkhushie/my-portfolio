@@ -1,6 +1,4 @@
-// app/components/PageLoader.tsx
 'use client';
-
 import { useEffect, useState } from 'react';
 
 const PageLoader = () => {
@@ -10,7 +8,7 @@ const PageLoader = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 200);
 
     // Simulate loading progress
     const progressInterval = setInterval(() => {
@@ -19,7 +17,7 @@ const PageLoader = () => {
           clearInterval(progressInterval);
           return 100;
         }
-        return prev + 10;
+        return prev + 50;
       });
     }, 150);
 
@@ -32,28 +30,22 @@ const PageLoader = () => {
   if (!isLoading) return null;
 
   return (
-    <div className="fixed inset-0 bg-[#0a0f1a] z-50 flex items-center justify-center">
-      <div className="text-center">
-        {/* Animated Logo/Text */}
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold text-white mb-4 animate-pulse">
-            Khushie Pal
-          </h1>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#4a9eff] to-[#3a7ad9] mx-auto rounded-full animate-pulse"></div>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-950">
+      <div className="text-center space-y-8">
+        {/* Animated Spinner */}
+        <div className="relative w-16 h-16 mx-auto">
+          <div className="absolute inset-0 border-4 border-gray-800 rounded-full"></div>
+          <div className="absolute inset-0 border-4 border-transparent border-t-blue-400 border-r-blue-500 rounded-full animate-spin"></div>
+          <div className="absolute inset-0 blur-xl bg-blue-500/30"></div>
         </div>
 
         {/* Progress Bar */}
-        <div className="w-64 h-1 bg-gray-700 rounded-full overflow-hidden mb-4">
+        {/* <div className="w-64 h-1 bg-gray-800 rounded-full overflow-hidden">
           <div 
-            className="h-full bg-gradient-to-r from-[#4a9eff] to-[#3a7ad9] transition-all duration-300 ease-out"
+            className="h-full bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 transition-all duration-300 ease-out rounded-full"
             style={{ width: `${progress}%` }}
           ></div>
-        </div>
-
-        {/* Loading Text */}
-        <p className="text-gray-400 text-sm animate-pulse">
-          Loading portfolio...
-        </p>
+        </div> */}
       </div>
     </div>
   );

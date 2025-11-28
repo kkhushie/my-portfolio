@@ -7,6 +7,9 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import StaggerAnimation from './components/StaggerAnimation';
 import HoverGlow from './components/HoverGlow';
+import Link from 'next/link';
+import { Mail } from 'lucide-react';
+import { GoArrowUpRight } from 'react-icons/go';
 
 export default function Home() {
   return (
@@ -19,7 +22,17 @@ export default function Home() {
         
         {/* Main Content */}
         <div className="lg:col-span-3">
-          
+        <div className="sticky top-4 z-10 mb-8 flex justify-end">
+    <Link 
+      href="/contact"
+      className="bg-gradient-to-r from-[#4a7aff] to-[#4a9eff] text-white rounded-2xl px-6 py-3 flex items-center gap-2 hover:shadow-[0_0_20px_rgba(59,130,246,0.6)] hover:scale-105 transition-all duration-300 group text-sm font-medium"
+    >
+      <Mail className="w-4 h-4" />
+      Contact Me
+      <GoArrowUpRight className="group-hover:translate-x-0 group-hover:-translate-x-1 transition-transform" />
+    </Link>
+  </div>
+
           <StaggerAnimation delay={600}>
               <ExperienceSection />
           </StaggerAnimation>

@@ -5,9 +5,62 @@ import { useState } from 'react';
 import { ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { GoArrowUpRight } from 'react-icons/go';
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiReact,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiPostgresql,
+  SiTailwindcss,
+  // SiPython,
+  // SiJava,
+  SiGit,
+  SiGithub,
+  SiJsonwebtokens
+} from 'react-icons/si';
+import { FaServer, FaShieldAlt } from 'react-icons/fa';
 
-const Experience = () => {
+const ExperienceSection = () => {
   const [showAll, setShowAll] = useState(false);
+
+  // Technology icons mapping
+  const techIcons: { [key: string]: any } = {
+    'Next.js': SiNextdotjs,
+    'TypeScript': SiTypescript,
+    'React': SiReact,
+    'Node.js': SiNodedotjs,
+    'Express.js': SiExpress,
+    'MongoDB': SiMongodb,
+    'PostgreSQL': SiPostgresql,
+    'Tailwind CSS': SiTailwindcss,
+    // 'Python': SiPython,
+    // 'Java': SiJava,
+    'Git': SiGit,
+    'GitHub': SiGithub,
+    'REST APIs': FaServer,
+    'JWT': SiJsonwebtokens,
+    'NextAuth.js': FaShieldAlt
+  };
+
+  // Technology colors
+  const techColors: { [key: string]: string } = {
+    'Next.js': 'text-white',
+    'TypeScript': 'text-blue-600',
+    'React': 'text-blue-400',
+    'Node.js': 'text-green-500',
+    'Express.js': 'text-gray-400',
+    'MongoDB': 'text-green-500',
+    'PostgreSQL': 'text-blue-400',
+    'Tailwind CSS': 'text-cyan-400',
+    'Java': 'text-red-500',
+    'Git': 'text-orange-500',
+    'GitHub': 'text-white',
+    'REST APIs': 'text-green-400',
+    'JWT': 'text-purple-400',
+    'NextAuth.js': 'text-blue-400'
+  };
 
   const experiences = [
     {
@@ -28,7 +81,7 @@ const Experience = () => {
       ],
       technologies: [
         'Next.js', 'TypeScript', 'React', 'Node.js', 'Express.js',
-        'MongoDB', 'PostgreSQL', 'Tailwind CSS', 'Python', 'Java',
+        'MongoDB', 'Tailwind CSS',
         'Git', 'GitHub', 'REST APIs', 'JWT', 'NextAuth.js'
       ]
     }
@@ -41,25 +94,19 @@ const Experience = () => {
   return (
     <section className="mb-12">
       <h2 className="text-3xl font-bold text-white mb-8">Experience</h2>
-      {/* <div className="flex items-center">
-        <Link href="/experience" className="flex items-center gap-1 group">
-          <h2 className="text-3xl font-bold text-white mb-8 group-hover:text-[31px] transition-all">
-            Experience
-          </h2>
-          <GoArrowUpRight className="text-white text-2xl translate-y-[-12px] group-hover:translate-x-1 group-hover:transition-all" />
-        </Link>
-      </div> */}
+      
       {/* Journey Timeline Line */}
       <div className="relative">
         {/* Vertical Line */}
         <div className="absolute left-6 top-4 bottom-4 w-0.5 bg-[#2a4a6d]"></div>
 
         {experiences.map((experience, index) => (
-          <div key={experience.id} className="relative mb-8 pl-16">
+          <div key={experience.id} className="relative mb-8 pl-16 ">
             {/* Timeline Dot */}
             <div className="absolute left-4 top-2 w-4 h-4 bg-[#4a9eff] rounded-full border-4 border-[#0a0f1a]"></div>
 
-            <div className="bg-[#0f1824] border border-[#1a2332] rounded-2xl p-6 hover:border-[#2a3f5f] transition-all">
+            <div className="bg-[#0f1824] border border-[#1a2332] rounded-2xl p-6 hover:border-[#2a3f5f]
+  hover:scale-[1.01] transition-all duration-300">
               {/* Period & Duration */}
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-sm text-gray-400 bg-[#1a2332] px-3 py-1 rounded-full">
@@ -129,17 +176,27 @@ const Experience = () => {
                 )}
               </div>
 
-              {/* Technologies */}
+              {/* Technologies with Icons */}
               <div className="mt-6">
-                <div className="flex flex-wrap gap-2">
-                  {experience.technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1.5 bg-[#1a2f4d] text-[#4a9eff] text-sm rounded-full border border-[#2a4a6d] hover:bg-[#243855] transition-colors cursor-pointer"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <h4 className="text-white font-semibold mb-3 text-lg">Technologies:</h4>
+                <div className="flex flex-wrap gap-3">
+                  {experience.technologies.map((tech, index) => {
+                    const IconComponent = techIcons[tech];
+                    const color = 'text-[#4a9eff]';
+                    const hoverColor = techColors[tech];
+                      // console.log(hoverColor);
+                    return (
+                      <span
+                        key={index}
+                        className={`px-3 py-2 bg-[#1a2f4d] text-[#4a9eff] text-sm rounded-xl border border-[#2a4a6d] hover:${hoverColor} transition-all duration-300 cursor-pointer flex items-center gap-2 group hover:scale-105`}
+                      >
+                        {IconComponent && (
+                          <IconComponent className={`w-4 h-4 ${color} group-hover:scale-110 transition-transform hover: `} />
+                        )}
+                        {tech}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             </div>
@@ -150,4 +207,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default ExperienceSection;

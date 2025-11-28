@@ -27,6 +27,8 @@ import {
     FaShieldAlt,
     FaLayerGroup
   } from 'react-icons/fa';
+import Link from 'next/link';
+import { GoArrowUpRight } from 'react-icons/go';
   
   const Skills = () => {
     const skills = [
@@ -55,7 +57,14 @@ import {
   
     return (
       <section className="mb-12">
-        <h2 className="text-3xl font-bold text-white mb-8">Skills</h2>
+        {/* <h2 className="text-3xl font-bold text-white mb-8">Skills</h2> */}
+        <Link href="/projects" className="flex items-center gap-1 group">
+          <h2 className="text-3xl font-bold text-white mb-8 group-hover:text-[31px] transition-all">
+          Skills
+          </h2>
+          <GoArrowUpRight className="text-white text-2xl translate-y-[-12px] group-hover:translate-x-1 group-hover:transition-all" />
+        </Link>
+
         <div className="flex flex-wrap gap-3">
           {skills.map((skill, index) => {
             const IconComponent = skill.icon;
