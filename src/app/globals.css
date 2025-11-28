@@ -101,3 +101,64 @@ body {
 * {
   cursor: none !important;
 }
+/* Disable custom cursor on mobile */
+@media (max-width: 768px) {
+  body {
+    cursor: auto !important;
+  }
+  
+  .custom-cursor {
+    display: none !important;
+  }
+}/* Smooth cursor optimizations */
+* {
+  cursor: none !important;
+}
+
+/* Hardware acceleration for cursor */
+.custom-cursor,
+.cursor-dot,
+.cursor-trail {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+
+/* Smooth scrolling for entire site */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  cursor: none;
+}
+
+/* Re-enable default cursor for forms and inputs */
+input, 
+textarea, 
+select, 
+button {
+  cursor: none;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  * {
+    cursor: auto !important;
+  }
+}
+/* Add to globals.css */
+.cursor-smooth {
+  transition: 
+    transform 0.1s cubic-bezier(0.15, 0.85, 0.35, 1),
+    opacity 0.2s ease,
+    scale 0.15s ease;
+}
+
+/* Reduce lag on low-power devices */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-smooth {
+    transition: none;
+  }
+}

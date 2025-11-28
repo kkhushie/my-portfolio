@@ -1,5 +1,6 @@
 import { ExternalLink, Github, Calendar } from 'lucide-react';
 import StaggerAnimation from '../components/StaggerAnimation';
+import Link from 'next/link';
 
 const projectsData=[
     { id:1,
@@ -13,7 +14,7 @@ const projectsData=[
       ],
       tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'Tailwind CSS', 'Cloudinary API'],
       links: {
-        github: '#',
+        github: 'https://github.com/kkhushie/PostMania',
         live: 'http://postmania.onrender.com/'
       }
     },
@@ -111,6 +112,7 @@ export default function Projects() {
 
               <div key={project.id} className="bg-[#0f1824] border border-[#1a2332] rounded-2xl p-6 hover:border-[#2a3f5f] transition-all group hover:scale-105 duration-300">
                 {/* Project Header */}
+                <Link href={project.links.live ? project.links.live : project.links.github} target="_blank" rel="noopener noreferrer">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
                     <span className="text-3xl group-hover:scale-110 transition-transform">{project.icon}</span>
@@ -124,7 +126,7 @@ export default function Projects() {
                   </div>
                   <ExternalLink className="text-gray-500 group-hover:text-[#4a9eff] transition-colors w-5 h-5" />
                 </div>
-                
+              
                 {/* Description */}
                 <p className="text-gray-300 mb-4 leading-relaxed">{project.desc}</p>
                 
@@ -146,7 +148,7 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                
+                </Link>
                 {/* Links */}
                 <div className="flex space-x-4 pt-4 border-t border-[#1a2332]">
                   <a 

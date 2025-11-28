@@ -79,6 +79,7 @@ const Projects = () => {
             // }
           ].map((project, index) => (
             <div key={index} className="bg-[#0f1824] border border-[#1a2332] rounded-2xl p-6 hover:border-[#2a3f5f] transition-all group">
+              <Link href={project.links.live || project.links.github} target="new">
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <span className="text-3xl group-hover:scale-110 transition-transform">{project.icon}</span>
@@ -100,7 +101,7 @@ const Projects = () => {
                   </li>
                 ))}
               </ul>
-              
+              </Link>
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((tech, i) => (
                   <span key={i} className="px-3 py-1.5 bg-[#1a2f4d] text-[#4a9eff] text-sm rounded-lg border border-[#2a4a6d]">

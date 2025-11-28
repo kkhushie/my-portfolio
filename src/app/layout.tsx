@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="cursor-none">
+      <body className="cursor-none md:cursor-auto"> {/* Changed this line */}
         <PageLoader />
         <AnimatedBackground />
         <CustomCursor />
