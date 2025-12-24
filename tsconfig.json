@@ -36,7 +36,7 @@
     ".next/dev/types/**/*.ts",
     "**/*.mts",
     "next.config.js"
-, "tailwind.config.js", "src/app/api/contact/route.js"  ],
+, "tailwind.config.js", "src/app/api/contact/route.js", "src/app/projects/attendance.png"  ],
   "exclude": [
     "node_modules"
   ]
