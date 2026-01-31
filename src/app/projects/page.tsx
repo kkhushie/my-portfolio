@@ -21,7 +21,7 @@ const projectsData = [
     tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'MERN', 'AI'],
     links: {
       github: 'https://github.com/kkhushie/levelr',
-      live: null
+      live: 'https://levelr-app.vercel.app/'
     }
   },
   {
