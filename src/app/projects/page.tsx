@@ -5,18 +5,57 @@ import Image from 'next/image';
 
 const projectsData = [
   {
+    id: 101,
+    name: 'Levelr - Gamified AI Goal Tracker',
+    icon: '🚀',
+    tag: 'Completed',
+    status: 'completed',
+    picture: '/projects/levelr.png',
+    desc: 'Levelr is a gamified productivity application that turns your goals into "Quests" and "Levels" using AI. It breaks down large objectives into actionable steps, rewarding you with XP and Coins as you progress.',
+    period: 'Jan 2026',
+    features: [
+      'Gamified productivity system turning goals into Quests and Levels',
+      'AI-powered objective breakdown into actionable steps',
+      'Reward system with XP and Coins for progress tracking'
+    ],
+    tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'MERN', 'AI'],
+    links: {
+      github: 'https://github.com/kkhushie/levelr',
+      live: null
+    }
+  },
+  {
+    id: 102,
+    name: 'Kithub - Premium PSD Marketplace',
+    icon: '🎨',
+    tag: 'Completed',
+    status: 'completed',
+    picture: '/projects/kithub.png',
+    desc: 'A modern, high-performance e-commerce platform built with Next.js 15 for selling premium PSD templates. Features secure Razorpay payments, instant digital downloads, and a creator-focused interface.',
+    period: 'Jan 2026',
+    features: [
+      'High-performance e-commerce platform with Next.js 15',
+      'Secure Razorpay payments and instant digital downloads',
+      'Creator-focused marketplace interface'
+    ],
+    tech: ['Next.js 15', 'PostgreSQL', 'Supabase', 'Razorpay'],
+    links: {
+      github: 'https://github.com/kkhushie/kithub',
+      live: null
+    }
+  },
+  {
     id: 1,
     name: 'FetchFriends.dev - Developer Pair Programming Platform',
     icon: '👨‍💻',
     tag: 'Building',
     status: 'in-progress',
-    picture: '/projects/fetchfriends.png', // Add your image path
+    picture: '/projects/fetchfriends.png',
     desc: 'Omegle for developers – but with VS Code, verification, and actual coding. Live pair programming platform with video chat and shared terminal.',
     period: 'Currently Building',
     features: [
-      'Instant pairing system like Omegle but for verified developers',
-      'Full VS Code (Monaco editor) in browser with live collaboration',
-      'Smart matching by language, skill level, or project goals',
+      'Instant developer pairing with WebRTC video calls and screen sharing',
+      'Full VS Code collaboration with shared terminal for real-time coding'
     ],
     tech: ['Next.js 14', 'TypeScript', 'WebRTC', 'Socket.io', 'MongoDB', 'Redis', 'Tailwind CSS'],
     links: {
@@ -26,15 +65,34 @@ const projectsData = [
   },
   {
     id: 2,
+    name: 'Qroom - Real-time Audience Interaction Platform',
+    icon: '🧠',
+    tag: 'Building',
+    status: 'in-progress',
+    picture: '/projects/qroom.png',
+    desc: 'Real-time audience interaction platform for engaging presentations, live polls, and Q&A sessions. Similar to Mentimeter but built for instant feedback and participation.',
+    period: 'Currently Building',
+    features: [
+      'Live polls and voting system with real-time results visualization',
+      'Interactive Q&A sessions with upvoting and moderation features'
+    ],
+    tech: ['React.js', 'Node.js', 'Express.js', 'MongoDB', 'Socket.io', 'Tailwind CSS', 'JWT', 'Chart.js'],
+    links: {
+      github: 'https://github.com/kkhushie/qroom',
+      live: null
+    }
+  },
+  {
+    id: 3,
     name: 'Motiv - Creator Intelligence App',
     icon: '🎯',
     tag: 'Completed',
     status: 'completed',
-    picture: '/projects/motiv.png', // Add your image path
+    picture: '/projects/motiv.png',
     desc: 'AI-powered platform that helps YouTube creators decide what content to make next by analyzing channels, finding patterns, and generating video ideas.',
     period: 'Jan 2025',
     features: [
-   'Multi-stage AI pipeline analyzing channels, finding patterns, and detecting content gaps',
+      'Multi-stage AI pipeline analyzing channels, finding patterns, and detecting content gaps',
       'Generates tailored video ideas with actionable topics and angles for creators'
     ],
     tech: ['TypeScript', 'Motia Framework', 'AI/ML', 'YouTube API', 'Node.js', 'React'],
@@ -44,12 +102,12 @@ const projectsData = [
     }
   },
   {
-    id: 3,
+    id: 4,
     name: 'ReelCraft – Media Sharing Platform',
     icon: '🎬',
     tag: 'Completed',
     status: 'completed',
-    picture: '/projects/reelcraft.png', // Add your image path
+    picture: '/projects/reelcraft.png',
     desc: 'Modern full-stack media sharing platform using Next.js 13 with App Router and TypeScript.',
     period: 'Oct 2025',
     features: [
@@ -63,12 +121,12 @@ const projectsData = [
     }
   },
   {
-    id: 4,
+    id: 5,
     name: 'PostMania – Social Media Platform',
     icon: '💬',
     tag: 'Completed',
     status: 'completed',
-    picture: '/projects/postmania.png', // Add your image path
+    picture: '/projects/postmania.png',
     desc: 'Created a social media app with post creation, editing, likes, and profile picture uploads.',
     period: 'Nov 2024',
     features: [
@@ -82,12 +140,12 @@ const projectsData = [
     }
   },
   {
-    id: 5,
+    id: 6,
     name: 'Codexpress – Institute Management System',
     icon: '🏫',
     tag: 'Completed',
     status: 'completed',
-    picture: '/projects/codexpress.png', // Add your image path
+    picture: '/projects/codexpress.png',
     desc: 'Comprehensive institute management system with role-based access control and Stripe payments.',
     period: 'April 2025',
     features: [
@@ -101,31 +159,31 @@ const projectsData = [
     }
   },
   {
-    id: 6,
+    id: 7,
     name: 'Attendance Management System (QR-Based)',
     icon: '📱',
     tag: 'Completed',
     status: 'completed',
-    picture: '/projects/attendance.png', // Add your image path
+    picture: '/projects/attendance.png',
     desc: 'Automated attendance system generating unique QR codes with real-time tracking.',
     period: 'Feb 2025',
     features: [
       'Implemented real-time attendance tracking with instant reporting and analytics',
       'Designed responsive admin dashboard for monitoring attendance patterns and statistics'
     ],
-    tech: ['MERN Stack', 'QR Code API', 'WebSockets', 'Tailwind CSS'],
+    tech: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'QR Code API', 'WebSockets', 'Tailwind CSS'],
     links: {
       github: 'https://github.com/kkhushie/Smart-Attendence-System',
       live: null
     }
   },
   {
-    id: 7,
+    id: 8,
     name: 'ChatLab-AI – AI Chatbot',
     icon: '🤖',
     tag: 'Completed',
     status: 'completed',
-    picture: '/projects/chatlab.png', // Add your image path
+    picture: '/projects/chatlab.png',
     desc: 'Built an AI-powered chatbot using React.js and Gemini API with modern UI/UX design.',
     period: 'Dec 2024',
     features: [
@@ -141,8 +199,6 @@ const projectsData = [
     }
   }
 ];
-
-// app/projects/page.tsx
 
 export default function Projects() {
   let staggerDelayIncrement = 600; // milliseconds
@@ -172,8 +228,8 @@ export default function Projects() {
                   <div className="bg-[#0f1824] border border-[#1a2332] rounded-2xl p-6 hover:border-[#2a3f5f] transition-all group hover:scale-105 duration-300 overflow-hidden">
                     {/* Status Tag */}
                     <div className="flex justify-between items-start mb-4">
-                      <div className={`px-3 py-1 rounded-full text-sm font-medium ${project.status === 'in-progress' 
-                        ? 'bg-yellow-900/30 text-yellow-400 border border-yellow-700/50' 
+                      <div className={`px-3 py-1 rounded-full text-sm font-medium ${project.status === 'in-progress'
+                        ? 'bg-yellow-900/30 text-yellow-400 border border-yellow-700/50'
                         : 'bg-green-900/30 text-green-400 border border-green-700/50'}`}>
                         {project.status === 'in-progress' ? (
                           <div className="flex items-center gap-2">
@@ -191,16 +247,16 @@ export default function Projects() {
                     <div className="mb-4 relative h-48 rounded-xl overflow-hidden bg-gradient-to-br from-[#1a2f4d] to-[#0f1824] border border-[#1a2332]">
                       {/* <div className="absolute inset-0 flex items-center justify-center">
                         <span className="text-6xl">{project.icon}</span>
-                      </div> */}
-                      {/* You can replace the icon with an actual Image component when you have images */}
-                      
+                      </div>  */}
+                      {/* Uncomment when you have actual images */}
+
                       <Image
                         src={project.picture}
                         alt={project.name}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-300"
                       />
-                     
+
                     </div>
 
                     <Link
