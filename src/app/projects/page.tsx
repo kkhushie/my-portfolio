@@ -28,8 +28,8 @@ const projectsData = [
     id: 102,
     name: 'Kithub - Premium PSD Marketplace',
     icon: '🎨',
-    tag: 'Completed',
-    status: 'completed',
+    tag: 'Building',
+    status: 'in-progress',
     picture: '/projects/kithub.png',
     desc: 'A modern, high-performance e-commerce platform built with Next.js 15 for selling premium PSD templates. Features secure Razorpay payments, instant digital downloads, and a creator-focused interface.',
     period: 'Jan 2026',
@@ -41,7 +41,7 @@ const projectsData = [
     tech: ['Next.js 15', 'PostgreSQL', 'Supabase', 'Razorpay'],
     links: {
       github: 'https://github.com/kkhushie/kithub',
-      live: null
+      live: 'https://kithub.tech'
     }
   },
   {
@@ -203,6 +203,7 @@ const projectsData = [
 export default function Projects() {
   let staggerDelayIncrement = 600; // milliseconds
 
+
   return (
     <div className="min-h-screen bg-[#0a0f1a]">
       <div className="max-w-6xl mx-auto p-8">
@@ -217,6 +218,7 @@ export default function Projects() {
             </p>
           </section>
         </StaggerAnimation>
+
 
         {/* Projects Grid */}
         <section className="mb-16">
@@ -342,6 +344,9 @@ export default function Projects() {
             <h3 className="text-xl font-semibold text-white mb-4">Project Stats</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
+                { number: projectsData.length, label: 'Total Projects' },
+                { number: projectsData.filter(p => p.status === 'completed').length, label: 'Completed' },
+                { number: projectsData.filter(p => p.status === 'in-progress').length, label: 'In Progress' },
                 { number: projectsData.length, label: 'Total Projects' },
                 { number: projectsData.filter(p => p.status === 'completed').length, label: 'Completed' },
                 { number: projectsData.filter(p => p.status === 'in-progress').length, label: 'In Progress' },

@@ -125,7 +125,7 @@ const Header = () => {
               <span>1</span>
             </div> */}
                     <div className="text-white text-sm">
-                        <a href="https://drive.google.com/file/d/19uDAc1o7I_P5MEpyCjxpuu7JQ6za2sqt/view?usp=sharing"
+                        <a href="https://drive.google.com/file/d/1BRb-Gw1o8K4TV_VOK9zcGWA9hbeovkln/view?usp=sharing"
                             target="_blank"
                             rel="noopener noreferrer"
                             className=' font-medium flex items-center gap-1'>
